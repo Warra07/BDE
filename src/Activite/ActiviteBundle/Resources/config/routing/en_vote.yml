@@ -1,0 +1,19 @@
+act_envote_index:
+    path:     /
+    defaults: { _controller: "ActiviteBundle:en_vote:index" }
+    methods:  GET
+
+act_envote_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActiviteBundle:en_vote:show" }
+    methods:  
+
+act_envote_vote:
+    path:     /vote/{en_vote}
+    defaults: { _controller: "ActiviteBundle:en_vote:vote" }
+    methods: [GET, POST]
+
+
+
+
+

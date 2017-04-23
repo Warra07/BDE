@@ -1,0 +1,24 @@
+admin_act_ancienne_index:
+    path:     /
+    defaults: { _controller: "ActiviteBundle:ancienneAdmin:index" }
+    methods:  GET
+
+admin_act_ancienne_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActiviteBundle:ancienneAdmin:show" }
+    methods:  GET
+
+admin_act_ancienne_new:
+    path:     /new
+    defaults: { _controller: "ActiviteBundle:ancienneAdmin:new" }
+    methods:  [GET, POST]
+
+admin_act_ancienne_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ActiviteBundle:ancienneAdmin:edit" }
+    methods:  [GET, POST]
+
+admin_act_ancienne_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ActiviteBundle:ancienneAdmin:delete" }
+    methods:  DELETE

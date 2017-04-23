@@ -1,0 +1,22 @@
+{% extends '::layout/layout.html.twig' %}
+
+
+{% block body %}
+<div class="center-inside">
+         <div id="container">   
+        
+            <form id="form2" action="{{path('adminPages_create')}}" method="post"  enctype="multipart/form-data">  
+            
+                <h3><span>Ajouter un Porduit </span></h3>
+            
+                <fieldset><legend>Ajout Page</legend>
+                    
+                  {{form_widget(form)}}
+                  {{form_end(form)}}    
+                                                
+                </fieldset>                 
+                        
+         </div>
+        </div>
+        </section>
+{% endblock %}

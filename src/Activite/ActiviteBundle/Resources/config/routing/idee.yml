@@ -1,0 +1,6 @@
+idee_new:
+    path:     /new
+    defaults: { _controller: "ActiviteBundle:idee:new" }
+    methods:  [GET, POST]
+
+

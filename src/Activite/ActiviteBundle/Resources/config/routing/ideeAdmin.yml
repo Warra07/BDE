@@ -1,0 +1,24 @@
+admin_idee_index:
+    path:     /
+    defaults: { _controller: "ActiviteBundle:ideeAdmin:index" }
+    methods:  GET
+
+admin_idee_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActiviteBundle:ideeAdmin:show" }
+    methods:  GET
+
+admin_idee_new:
+    path:     /new
+    defaults: { _controller: "ActiviteBundle:ideeAdmin:new" }
+    methods:  [GET, POST]
+
+admin_idee_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ActiviteBundle:ideeAdmin:edit" }
+    methods:  [GET, POST]
+
+admin_idee_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ActiviteBundle:ideeAdmin:delete" }
+    methods:  DELETE

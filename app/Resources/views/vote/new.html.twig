@@ -1,0 +1,16 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+<section class="container-fluid">
+    <h1>Vote</h1>
+
+    <form id="form2" class="text-center" action="{{path('act_envote_vote',  { 'en_vote': en_vote.id })}}" method="POST" enctype="multipart/form-data">
+        {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+        </li>
+    </ul>
+    </section>
+{% endblock %}

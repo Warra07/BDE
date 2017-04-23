@@ -1,0 +1,36 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+<section class="container-fluid">
+    <h1>Valides list</h1>
+
+    <table class="alphabg table" style="width:100%">
+        <thead>
+            <tr>
+                <th>titre</th>
+                <th>Nbmax</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for valide in valides %}
+            <tr>
+                <td>{{valide.activite.titre}}</td>
+                <td>{{ valide.nbmax }}</td>
+                <td>{{ valide.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_act_valide_show', { 'id': valide.id }) }}">show</a>
+                            <a href="{{ path('admin_act_valide_edit', { 'id': valide.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </section>
+{% endblock %}

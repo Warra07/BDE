@@ -1,0 +1,39 @@
+			html {box-sizing: border-box;}
+			*,
+			*:before,
+			*:after { box-sizing: inherit;}
+			body {background-image:url(images/campus.jpg); background-position:center; background-attachment:fixed; background-repeat: no-repeat;}
+			
+			section {margin: 0 auto; max-width: auto; min-height:100vh; width: 100%;} 
+			section > h1 {margin:5%; margin-bottom:10%; font-size:40px; color:white; text-align:center;}
+			.carousel-contain{text-align: center; vertical-align:middle; padding-bottom: 2em;}
+			.carousel-contain:before{content: '';display: inline-block;vertical-align: middle; border: 1px white solid;}
+			#content{display: block;vertical-align: middle;}
+			
+			.my-article-container {width:100%; min-height:300px; height:auto;}
+			.alphabg {padding:5px; border:1px solid white; border-radius:15px; background: rgba(0,0,0, 0.7); min-width:200px; min height:200px; color:white;}
+			.article-header {text-align:center;color: white ; margin:0px; padding:0px; letter-spacing:5px; background:rgba(255,68,68,1); border-radius:15px; border-bottom: medium solid white;border-top: medium solid red; font-size:36px;}
+			.article-main{margin-top:15px; margin-bottom:15px;}
+			.article-footer {color:black; background:rgba(255,255,255,1);  border-radius:15px; border-top: medium solid black; font-size:18px;}
+			.article-container-header {padding:5px; background-color:gray; border-radius:10px; border:2px dotted darkgray; height:100px; letter-spacing:10px; font-size:50px; text-align:center;}
+			
+			.navbar-brand {position: absolute; width: 100%; left: 0; text-align: center; margin:0 auto;}
+			.navbar-toggle { z-index:3;}
+			
+			form{color:black;}
+			
+			tr:nth-child(even) {background-color: #dddddd;}	
+			
+			.bottom-inside{display:flex;justify-content:center;align-items:flex-end;}
+			.borderbg { border : 2px solid red }
+			a {color: #ff4444 ;}
+			
+			ul > li > a { color:gray; letter-spacing:2px; size:20px;}
+			ul > li > a:hover { color:red; letter-spacing:2px; size:20px;}
+			
+			. {border:2px solid red}
+			.avatar100{height: 100px; width:100px; border:2px solid white ; border-radius:50px; background-color:black; background-image:url('images/campus.jpg');background-position:center; background-size: contain; background-repeat: no-repeat; top:0; left:0; right:0; bottom:0;}
+			.imageproduit{height:200px;; width:200px;; border:2px solid white ; border-radius:15px; background-color:black; background-image:url('images/campus.jpg');background-position:center; background-size: contain; background-repeat: no-repeat; top:0; left:0; right:0; bottom:0;} 
+			.center-inside{display:flex;justify-content:center;align-items:center;width:100%;height:100%;}
+			.imagearticle{height:250px;; width:250px;; border:2px solid white ; border-radius:15px; background-color:black; background-image:url('images/campus.jpg');background-position:center; background-size: contain; background-repeat: no-repeat; top:0; left:0; right:0; bottom:0;}
+			.boutonshop{height: 40px; width:40px; border:2px solid white ; border-radius:50px; background-color:black; background-image:url('images/campus.jpg');background-position:center; background-size: contain; background-repeat: no-repeat; top:0; left:0; right:0; bottom:0;}

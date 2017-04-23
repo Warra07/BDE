@@ -1,0 +1,21 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+<div class="center-inside">
+         <div id="container">   
+        
+            <form id="form2" action="{{path('admin_act_valide_new')}}" method="post"  enctype="multipart/form-data">  
+            
+                <h3><span>Ajouter un évènement valide</span></h3>
+            
+                <fieldset><legend>Ajout évènement valide</legend>
+                    
+                  {{form_widget(form)}}
+                  {{form_end(form)}}    
+                                                
+                </fieldset>                 
+                        
+         </div>
+        </div>
+        </section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends '::layout/layout.html.twig' %}
+
+{% block body -%}
+		<section class="container-fluid">
+			<div class="article-container-header">Mon Compte</div>
+			<div class="alphabg col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2" style="height:auto;">
+				<div class="my-article-container">
+					<div class="article-header">{{user.username}}</div>
+						<div class="article-main container-fluid">
+						<div class=" col-md-6 col-lg-6">
+										<span class="center-inside"><div style="background-image:url({{asset(user.image.AssetPath)}})" class="imageproduit"></div></span>
+										</div>
+										<br>
+										<strong> Nom:</strong> {{user.nom}}<br>
+										<strong> Prenom:</strong> {{user.prenom}}<br>
+										<br><br>
+										<strong> Pseudo:</strong> {{user.username}}<br>
+										<strong>E-mail:</strong> {{user.email}}<br>
+										<strong>Centre exia:</strong> Alger<br>
+										<strong>Année:</strong> {{ user.promo|date('Y-m-d')}}<br>
+
+									
+				</div>
+				<div class="text-center article-footer">
+				
+				</div>
+			</div>
+		</section >
+{% endblock %}

@@ -1,0 +1,16 @@
+act_valide_index:
+    path:     /
+    defaults: { _controller: "ActiviteBundle:valide:index" }
+    methods:  GET
+
+act_valide_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActiviteBundle:valide:show" }
+    methods:  GET
+
+act_valide_inscrit:
+    path:     /inscrit/{valide}
+    defaults: { _controller: "ActiviteBundle:valide:inscrit" }
+    
+
+

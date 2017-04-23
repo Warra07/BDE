@@ -1,0 +1,83 @@
+<!Doctype html> 
+<html lang="fr-FR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Site officiel du bureau des étudiants de l'Exia"/>
+        <meta name="keywords" content="Bureau des étudiants, Exia, Cesi, Activités, étudiants, informatique, vie associative"/>
+        <meta name="author" content="Belahcel Wacim, Benaboud Ramzi, Omar Amrani Fares, Tobbal Nadjet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>BDE Exia</title>
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href=" {{ asset('css/bde.css') }}">
+        <link rel="stylesheet" href=" {{ asset('css/screen.css') }}">
+         <link rel="stylesheet" href=" {{ asset('css/hoverbox.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    
+    <body style="background-image:url({{ asset('images/campus.jpg') }});">
+        <header>
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>    
+                    <a class="navbar-brand center-inside" href="{{ path('bde_index') }}"><img style="height:50px; width:50px" src=" {{ asset('images/logo.png') }}" alt="Cesi Exia"/></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                                        <li style="background-color"><a href="{{ path('bde_index') }}">Accueil</a></li>
+                                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Activités<span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="{{ path('act_envote_index') }}">En vote</a></li>
+                                                <li><a href="{{ path('act_valide_index') }}">Validées</a></li>
+                                                <li><a href="{{ path('act_ancienne_index') }}">Passées</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{{ path('produits')}}">Boutique</a></li>
+                                        <li><a href="{{ path('album_index')}}">Galerie</a></li>
+                                    </ul>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ path('fos_user_profile_show') }}"><span class="glyphicon glyphicon-user"></span> Mon compte</a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+		{% block body %}{% endblock %}
+   <footer>
+            <div class="container-fluid" style=" background-color:#2E2E2E !important; text-align: center">
+                <div style ="float:left;">
+                    <a href=""><i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-2x fa-twitter-square" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>
+                </div>
+
+                <a href="">Contact</a>
+                |
+                <a href="">Mentions légales</a>
+                |
+                <a style="" href="#">Conditions d'utilisation</a>
+                |
+                <a style="" href="#">A propos</a>
+
+            </div>
+
+            <div class="container-fluid" style="background-color: #ff4444">
+                    <div class="container-fluid" style="background-color:white; padding:3px; margin:3px; border-radius:15px;text-align: left">
+                        <a class="col-xs-6 col-sm-4 col-md-2 col-lg-2" href="http://www.cesi.fr/"><img src="https://exia.cesi.fr/wp-content/themes/eice/assets/images/logo-footer-cesi.png" alt="CESI"></a> 
+                        <a class="col-xs-6 col-sm-4 col-md-2 col-lg-2" href="https://www.eicesi.fr/"><img src="https://exia.cesi.fr/wp-content/themes/eice/assets/images/logo-footer-cesi-eice.png" alt="ei.CESI"></a>
+                        <a class="col-xs-6 col-sm-4 col-md-2 col-lg-2" href="https://www.cesi-alternance.fr/"><img src="https://exia.cesi.fr/wp-content/themes/eice/assets/images/logo-footer-cesi-alternance.png" alt="CESI alternance"></a>
+                        <a class="col-xs-6 col-sm-4 col-md-2 col-lg-2" href="https://www.cesi-entreprises.fr/"><img src="https://exia.cesi.fr/wp-content/themes/eice/assets/images/logo-footer-cesi-enterprise.png" alt="CESI entreprises, l'école des managers"></a>
+                        <a class="col-xs-6 col-sm-4 col-md-2 col-lg-2" href="http://www.cesi-certification.fr/"><img src="https://exia.cesi.fr/wp-content/themes/eice/assets/images/logo-footer-cesi-certification.png" alt="CESI certification"></a>
+                        <a class="col-xs-6 col-sm-4 col-md-2 col-lg-2" href="http://www.cesialumni.fr/"><img src="https://exia.cesi.fr/wp-content/themes/eice/assets/images/logo-footer-cesi-alumni.png" alt="CESI alumni"></a>
+                    </div>
+            </div>
+        </div>
+        </footer>
+    </body>
+</html>

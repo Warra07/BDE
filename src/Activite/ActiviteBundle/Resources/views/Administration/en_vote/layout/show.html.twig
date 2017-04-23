@@ -1,0 +1,24 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+    <h1>En_vote</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ en_vote.id }}</td>
+            </tr>
+            <tr>
+                <th>Recurrent</th>
+                <td>{% if en_vote.recurrent %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_act_envote_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

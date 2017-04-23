@@ -1,0 +1,16 @@
+act_ancienne_index:
+    path:     /
+    defaults: { _controller: "ActiviteBundle:ancienne:index" }
+    methods:  GET
+
+act_ancienne_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActiviteBundle:ancienne:show" }
+    methods:  GET
+
+
+
+user_like:
+    path:     /like/{album}
+    defaults: { _controller: "ActiviteBundle:ancienne:index" }
+    methods:  GET

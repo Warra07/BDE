@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Idee</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ idee.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ idee.titre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ idee.contenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('idee_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('idee_edit', { 'id': idee.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

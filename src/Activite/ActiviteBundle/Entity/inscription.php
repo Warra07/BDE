@@ -1,0 +1,129 @@
+<?php
+
+namespace Activite\ActiviteBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * inscription
+ *
+ * @ORM\Table(name="inscription")
+ * @ORM\Entity(repositoryClass="Activite\ActiviteBundle\Repository\inscriptionRepository")
+ */
+class inscription
+{
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Utilisateurs\UtilisateursBundle\Entity\Utilisateurs", inversedBy="inscription")
+    * @ORM\JoinColumn(nullable=true)
+    */
+ private $user;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Activite\ActiviteBundle\Entity\valide", inversedBy="inscription")
+    * @ORM\JoinColumn(nullable=true)
+    */
+ private $valide;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="information", type="text")
+     */
+    private $information;
+
+
+    
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Utilisateurs\UtilisateursBundle\Entity\Utilisateurs $user
+     *
+     * @return inscription
+     */
+    public function setUser(\Utilisateurs\UtilisateursBundle\Entity\Utilisateurs $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Utilisateurs\UtilisateursBundle\Entity\Utilisateurs
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set valide
+     *
+     * @param \Activite\ActiviteBundle\Entity\valide $valide
+     *
+     * @return inscription
+     */
+    public function setValide(\Activite\ActiviteBundle\Entity\valide $valide = null)
+    {
+        $this->valide = $valide;
+
+        return $this;
+    }
+
+    /**
+     * Get valide
+     *
+     * @return \Activite\ActiviteBundle\Entity\valide
+     */
+    public function getValide()
+    {
+        return $this->valide;
+    }
+
+    /**
+     * Set information
+     *
+     * @param string $information
+     *
+     * @return inscription
+     */
+    public function setInformation($information)
+    {
+        $this->information = $information;
+
+        return $this;
+    }
+
+    /**
+     * Get information
+     *
+     * @return string
+     */
+    public function getInformation()
+    {
+        return $this->information;
+    }
+}

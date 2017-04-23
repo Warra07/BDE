@@ -1,0 +1,24 @@
+admin_act_envote_index:
+    path:     /
+    defaults: { _controller: "ActiviteBundle:en_voteAdmin:index" }
+    methods:  GET
+
+admin_act_envote_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActiviteBundle:en_voteAdmin:show" }
+    methods:  GET
+
+admin_act_envote_new:
+    path:     /new
+    defaults: { _controller: "ActiviteBundle:en_voteAdmin:new" }
+    methods:  [GET, POST]
+
+admin_act_envote_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ActiviteBundle:en_voteAdmin:edit" }
+    methods:  [GET, POST]
+
+admin_act_envote_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ActiviteBundle:en_voteAdmin:delete" }
+    methods:  DELETE

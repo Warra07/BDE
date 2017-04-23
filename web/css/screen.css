@@ -1,0 +1,84 @@
+﻿
+#container{ text-align: center; padding-bottom: 2em; }
+
+/* form 2 */
+
+	#form2{
+		margin:1em 0;
+		color:#fff;
+		min-width: 70px;
+		}
+
+	#form2 h3{
+		margin:0;
+		background:#ff4444 ;	
+		color:#fff;
+		font-size:20px;
+		border-bottom:none;
+		border-radius:15px 15px 0px 0px;
+		}	
+
+	#form2 h3 span{
+		display:block;
+		padding:10px 20px;		
+		}		
+
+	#form2 fieldset{
+		margin:0;
+		padding:0;
+		border:none;	
+		background: linear-gradient(#ff4444, #2E2E2E);
+		padding-bottom:1em;
+		border-radius:0px 0px 15px 15px;
+		}
+
+	#form2 legend{display:none;}	
+	#form2 p{margin:.5em 20px;}	
+	#form2 label{display:block;}	
+	
+	#form2 input{ 		
+		border:1px solid #111;
+		background:#2E2E2E url(form_input.gif) repeat-x;
+		padding:5px 3px;
+		color:#fff;
+		border-radius:10px;
+		}	
+
+	#form2 textarea{ 		
+		border:1px solid #111;
+		background:#2E2E2E url(form_input.gif) repeat-x;
+		padding:5px 3px;
+		color:#fff;
+		border-radius:10px;
+		}		
+
+	#form2 p.submit{
+		text-align:center;
+		}	
+
+	#form2 button{
+		padding:0 20px;
+		height:50px;	
+		width: 150px;
+		margin-top: 1em;
+		background:#ff4444;
+		cursor:pointer;		
+		text-align:center;	
+		border-radius:28px;	
+		border:1px solid #ff4444;
+		}				
+    
+    #form2 select{
+    	border:1px solid #111;
+		background:#2E2E2E url(form_input.gif) repeat-x;
+		padding:5px 3px;
+		color:#fff;
+		border-radius:10px;
+    }
+    
+    #checkbox{
+		float: middle;
+	}
+
+	#file {margin:0 auto !important}
+

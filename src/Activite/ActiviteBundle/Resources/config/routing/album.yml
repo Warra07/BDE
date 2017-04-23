@@ -1,0 +1,15 @@
+album_index:
+    path:     /
+    defaults: { _controller: "ActiviteBundle:Album:index" }
+    methods:  [GET, POST]
+
+album_ancienne:
+    path:     /ancienne/{ancienne}
+    defaults: { _controller: "ActiviteBundle:Album:index" }
+    methods:  GET
+
+
+album_new:
+    path:     /new
+    defaults: { _controller: "ActiviteBundle:Album:new" }
+    methods:  [GET, POST]

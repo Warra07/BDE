@@ -1,0 +1,36 @@
+{% extends '::layout/layout.html.twig' %}
+
+{% block body -%}
+    <h1>Produits list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Disponible</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.prix }}</td>
+                <td>{{ entity.disponible }}</td>
+                <td>
+                    <a href="{{ path('adminProduits_edit', { 'id': entity.id }) }}">editer</i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('adminProduits_new') }}">
+                nouveau produit
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

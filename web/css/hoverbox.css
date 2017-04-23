@@ -1,0 +1,90 @@
+*
+{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* =Basic HTML, Non-essential
+----------------------------------------------------------------------*/
+
+a
+{
+	text-decoration: none;
+}
+
+h1
+{
+	background: inherit;
+	font: 17px Georgia, serif;
+	margin: 0 0 10px;
+	padding: 0 0 5px;
+	text-align: center;
+}
+
+
+
+p a:hover
+{
+	background: inherit;
+	color: #000;
+}
+
+
+
+.hoverbox
+{16:36 22/04/2017
+	cursor: default;
+	list-style: none;
+}
+
+.hoverbox a
+{
+	cursor: default;
+}
+
+.hoverbox a .preview
+{
+
+	display: none;
+}
+@media(min-width:768px){
+.hoverbox a:hover .preview
+{
+	display: block;
+	position: fixed;
+	top: 20vh;
+	left: 50px;
+	z-index: 1;
+}
+}
+.hoverbox img
+{
+	border-radius: 15px;
+	color: inherit;
+	padding: 2px;
+	vertical-align: top;
+	width: 200px;
+	height: 150px;
+}
+
+.hoverbox li
+{
+	border-radius: 15px;
+	color: inherit;
+	display: inline;
+	float: left;
+	margin: 3px;
+	padding: 5px;
+	position: relative;
+}
+
+.hoverbox .preview
+{
+
+	width: 400px;
+	height: 300px;
+}
+input[type=checkbox] {
+  		transform: scale(1.5);
+}

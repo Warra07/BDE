@@ -1,0 +1,35 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+            <section class="container-fluid">
+        <div class="article-container-header">
+        Gestion site
+        </div>  
+        <div class=" col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+                <div class="my-article-container">
+                    <div class="alphabg  container-fluid" style="margin:10px;">
+                        <div class="alphabg container-fluid" style="margin:10px;">
+                            <a style="text-decoration: none;" href=""><div class="article-header" style="width:100%">
+                                {{valide.activite.titre}}
+                            </div></a>                      
+                            <div class="imagearticle" style="background-image:url({{asset(valide.activite.image.AssetPath)}}); float:left; margin:10px;"></div>
+                            <div class="article-main  container-fluid" style="width:100%">
+                                    {{valide.activite.texte}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="alphabg  container-fluid" style="margin:10px;">
+                    <h3>Utilisateurs inscrits :</h3>
+                    {% for inscrit in valide.inscription %}
+                    
+                        <div class="alphabg col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3" style="padding:10px; margin-top:15px; margin-bottom:15px;""><a href="">{{ inscrit.user.nom }} {{ inscrit.user.prenom  }}</a>
+                        </br> Infos inscription : inscrit.information</div>
+                    
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

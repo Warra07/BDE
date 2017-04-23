@@ -1,0 +1,41 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+    <h1>Idees list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Text</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for idee in idees %}
+            <tr>
+                <td><a href="{{ path('admin_idee_show', { 'id': idee.id }) }}">{{ idee.id }}</a></td>
+                <td>{{ idee.titre }}</td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_idee_show', { 'id': idee.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_idee_edit', { 'id': idee.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_idee_new') }}">Create a new idee</a>
+        </li>
+    </ul>
+{% endblock %}

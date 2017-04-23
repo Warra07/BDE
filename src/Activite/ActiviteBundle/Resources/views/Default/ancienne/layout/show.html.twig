@@ -1,0 +1,85 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+        <section class="container-fluid">
+            <div class="article-container-header">
+            Evenements passés
+            </div>  
+            <div class="center-inside">
+                <div class="my-article-container">
+                    <div class="alphabg  container-fluid" style="margin:10px;">
+                        <a style="text-decoration: none;" href=""><div class="article-header" style="width:100%">
+                           {{ancienne.activite.titre}}
+                        </div></a>
+                        
+                    <div class="carousel-contain" style="width:60%; float:left;">
+                        <div class="container-fluid" id="content">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        
+                        <div class="carousel-inner" role="listbox">
+                           {% for img in ancienne.album %}
+                            <div {% if loop.index0 == 0 %} class="item active" {% else %} class="item" {% endif %}>
+                                <div style="width: 100%; height:300px; margin-left: auto; margin-right: auto; overflow: hidden; display:block; top:0; left: 0; right: 0; bottom: 0; background-image:url({{asset(img.image.AssetPath)}}); background-repeat: no-repeat; background-size: contain; background-position: center;">
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                          <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+                        
+                        <div class="article-main container-fluid" style="width:100%">
+                                {{ancienne.activite.texte}}
+                        </div>
+                    </div>
+                    <div class="alphabg container-fluid" style="margin:10px;">
+                        
+                        <h4 style="text-align:center"> Commentaires </h4>
+                        <div> 
+                            {% for com in ancienne.activite.commentaire %}
+                            <div class="avatar100" style="background-image:url({{asset(com.user.image.AssetPath)}}) ;float:left ;height:15vh; width:15vh;"></div>
+                            <div class="alphabg container-fluid"  style="; max-width:80vw">
+                                <a style="float:right" href="{{path('act_comment_delete', { 'commentaire': com.id})}}"><span class="glyphicon glyphicon-remove"></span></a>
+                                <h4>{{com.user.nom}}<br></h4>
+                                {{com.comentaire}}
+                            </div>
+                            <center style="color:gray">{{com.date|date('m/d/Y')}}</center>
+                            {% endfor %}
+                        </div> 
+            <form id="form2" action="{{path('act_commenter',  { 'activite': ancienne.activite.id })}}" method="post"  enctype="multipart/form-data">
+        {{ form_row(commentaire_form.comentaire, { 'attr': { 
+        'style' : 'width:100%',
+        'rows' : '15',
+        'cols' : '50' }} ) }}
+        {{ form_row(commentaire_form.Commenter, {'attr' : {
+        'style' : 'width:40%;'}})  }}
+         {{ form_end(commentaire_form) }}
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <script>
+
+
+    
+           
+{% endblock %}
+
+

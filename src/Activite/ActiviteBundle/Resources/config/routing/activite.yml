@@ -1,0 +1,13 @@
+act_commenter:
+    path:     /{activite}
+    defaults: { _controller: "ActiviteBundle:Activite:Commentaire" }
+    methods:  [POST]
+
+
+
+
+act_comment_delete:
+    path:     /commentaire/delete/{commentaire}
+    defaults: { _controller: "ActiviteBundle:Activite:DeleteCommentaire" }
+    methods:  [GET]
+

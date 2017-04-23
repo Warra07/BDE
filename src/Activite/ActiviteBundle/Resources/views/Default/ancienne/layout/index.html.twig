@@ -1,0 +1,38 @@
+{% extends 'layout/layout.html.twig' %}
+
+
+{% block body %}
+   
+<section class="container-fluid">
+                <div class="article-container-header">
+        Evenements passés
+        </div>
+        <div class=" col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+
+            <div class="center-inside">
+            {% for ancienne in anciennes %}
+                <div class="my-article-container">
+                    <div class="alphabg  container-fluid" style="margin:10px;">
+                        <a style="text-decoration: none;" href="{{path('act_ancienne_show', { 'id': ancienne.id})}}"><div class="article-header" style="width:100%">
+                            {{ancienne.activite.titre}}
+                        </div></a>
+                        <div class="article-main container-fluid" style="width:100%">
+                            <div class="col-md-4 text-center" style="height:100%;">
+                                <!--Ici l'image centrée et formattée 100px/100px-->
+                                <div class="center-inside">
+                                    <div class="imagearticle" style="background-image:url({{asset(ancienne.activite.image.AssetPath)}})"></div>
+                                </div>
+                                <a href="{{path('album_ancienne', { 'ancienne': ancienne.id})}}"><button class="btn">voir album</button></a>
+                            </div>
+                            <div class="col-md-8" style="height:100%;">
+                                {{ancienne.activite.texte}}
+                            </div>
+                        </div>
+            {% endfor %}
+            </div>
+        </div>
+
+        </section>
+    
+{% endblock %}
+

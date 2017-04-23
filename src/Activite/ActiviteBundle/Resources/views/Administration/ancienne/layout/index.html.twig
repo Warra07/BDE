@@ -1,0 +1,31 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+<section class="container-fluid">
+    <h1>Anciennes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ancienne in anciennes %}
+            <tr>
+                <td><a href="{{ path('act_ancienne_show', { 'id': ancienne.id }) }}">{{ ancienne.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('act_ancienne_show', { 'id': ancienne.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </section>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+ <section class=" center-inside container-fluid">
+            <div class="row no-gutters center-inside">
+    
+                <div class="col-12 col-sm-6 col-md-8">
+                    <div class=" container-fluid alphabg">
+                    
+                    <h1>BDE Exia<br>
+                    <small>Le bureau des étudiants qui anime votre quotidien</small></h1>
+                    <p>Fait par et pour des Exars pour l'organisation des événements allant du divertissement à l'enrichissement individuel, le BDE vous aide à la selection de vos activités.<br>
+                    Proposez vos idées, votez pour vos préférées, annoncez votre participation et le BDE veillera à leur réalisation.</p>
+                    </div>
+                    </div>
+                
+    
+                <div class="container-fluid col-6 col-md-4">
+        
+        <div class="center-inside">
+        <div id="container" style="border-radius:15px;">    
+        
+                    <form class="alphabg" action="{{ path("fos_user_security_check") }}" method="post">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                     <h3><span>Connectez-vous</span></h3>
+            
+                <fieldset><legend>Formulaire de connexion</legend>
+                    <p class="first">
+                    <label for="username">{{ 'security.login.username'|trans }}</label>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"  id="name" size="30" />
+                     </p>
+                     <p>
+                    <label for="password">{{ 'security.login.password'|trans }}</label>
+                    <input type="password" id="password" name="_password" required="required" id="password" size="30" />
+                    </p>
+                    <input class="btn btn-primary" type="submit" value="{{ 'security.login.submit'|trans }}" />
+                     <br><br><a href="{{ path('fos_user_registration_register') }}">--Inscrivez-vous--</a>
+                     </fieldset>                 
+                            
+            </form> 
+            
+            </div>
+        </div>
+
+      </div>
+      </div>
+        </section>
+              
+            {% endblock fos_user_content %}
+
+

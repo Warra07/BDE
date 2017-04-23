@@ -1,0 +1,38 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+    <section class="container-fluid">
+    <div class="article-container-header">Galerie</div>
+        <div class="container alphabg col-md-8 col-md-offset-4">
+
+            <form id="form2" action="{{path('album_index')}}" method="post"  enctype="multipart/form-data">  
+                <div class="container" style="margin: 0 auto">
+                <ul class="hoverbox">
+                
+                {% for image in form.album %}
+
+               {% set index = image.vars.value %}{# get array index #}
+               {% set entity = form.album.vars.choices[index].data %}{# get entity object #}
+                 
+                  <li>
+                  {{ form_widget(image) }}
+                  <a href="#"><div class="avatar100" style="background-image:url({{ asset(entity.image.AssetPath) }});"></div><div class="imagearticle preview" style="background-image:url({{ asset(entity.image.AssetPath) }});"></div></a>
+                  </li>
+                 {% endfor %}
+                </ul>
+            </div>
+            <div class="center-inside">
+
+                 <p class="submit">{{ form_widget(form.Telecharger) }}</p>    
+                <p class="button"><a style="text-decoration:none; color:white" href="{{ path('album_new') }}"><button type="button">Upload</button></a></p>
+                <p class="submit">{{ form_widget(form.Supprimer) }}</p>
+            </div>
+    </fieldset> 
+    {{form_end(form)}}
+</div>
+
+
+
+      </div>
+    </section>
+{% endblock %}

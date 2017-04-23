@@ -1,0 +1,44 @@
+{% extends 'layout/layout.html.twig' %}
+
+
+{% block body %}
+
+		<section class="container-fluid">
+			<div class="article-container-header">Administration</div>
+				<div class="my-article-container">
+					<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2" style="height:auto;">
+						<div class="alphabg">
+					
+							<div class="article-header center-inside" style="width:100%">
+								Gestion
+							</div>
+							
+							<div class="container-fluid article-main" style="width:100%">
+								<div style="height:100%;">
+									<ul style="list-style-type: none" class="({% if is_granted('ROLE_ADMIN') %} col-md-6 col-lg-6 {% else %} col-md-12 col-lg-12 {% endif %} text-center alphabg "> 
+									<div class="article-header center-inside" style="width:100%">
+										Boutique
+									</div>
+										<li><a href="{{path('adminCommande')}}"> Gérer les commandes</a></li>
+										<li><a href="{{path('admin_Categories')}}">Gérer les Categories</a></li>
+										<li><a href="{{path('adminProduits')}}">Gérer les produits</a></li>
+									</ul>
+									{% if is_granted('ROLE_ADMIN') %}
+									<ul style="list-style-type: none" class="({% if is_granted('ROLE_ADMIN') %} col-md-6 col-lg-6 {% else %} col-md-12 col-lg-12 {% endif %} text-center alphabg ">  
+									<div class="article-header center-inside" style="width:100%">
+										Evenements
+									</div>
+										<li><a href="{{path('admin_act_ancienne_index')}}">Gérer les activité anciennes</a></li>
+										<li><a href="{{path('admin_act_valide_index')}}">Gérer les activité Valide</a></li>
+										<li><a href="{{path('admin_act_envote_index')}}">Gérer les activité Envote</a></li>
+									</ul>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+		</section >
+
+    
+{% endblock %}

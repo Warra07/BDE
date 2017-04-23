@@ -1,0 +1,66 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+        <section class="container-fluid">
+        <div class="article-container-header">
+        Evenements en vote
+        </div>  
+            <div class="center-inside">
+                <div class="my-article-container">
+                    <div class="alphabg container-fluid" style="margin:10px;">
+                        <a style="text-decoration: none;" href=""><div class="article-header" style="width:100%">
+                            {{en_vote.activite.titre}}
+                        </div></a>
+                        
+                        <div class="imagearticle" style="background-image:url({{asset(en_vote.activite.image.AssetPath)}});float:left; margin:10px;"></div>
+                        <div class="article-main  container-fluid" style="width:100%">
+                                {{en_vote.activite.texte}}
+                        </div>
+                        <span class="center-inside"> {{en_vote.vote|length}} personne(s) ont déjà voté pour cet événement </span>
+                            <div class="container-fluid" style="text-align:center; width:40%">
+                            </div>
+                            {% if en_vote.vote|length == 0 %}
+                            <a href="{{path('act_envote_vote', { 'en_vote' : en_vote.id})}}"><div class="article-footer container-fluid" style="text-align:center; width:40%">
+                                    <span style="float:left" class="glyphicon glyphicon-thumbs-up"></span>
+                                    Voter pour
+                                    <span style="float:right" class="glyphicon glyphicon-thumbs-up"></span>
+                            </div></a>
+                            {% else %}
+                            <a href="{{path('act_envote_vote', { 'en_vote' : en_vote.id})}}"><div class="article-footer container-fluid" style="text-align:center; width:40%">
+                                    <span style="float:left" class="glyphicon glyphicon-thumbs-down"></span>
+                                    Retirer vote
+                                    <span style="float:right" class="glyphicon glyphicon-thumbs-down"></span>
+                            </div></a>
+                            {% endif %}
+                    </div>
+                </div>
+        </div>
+        
+                
+                        <div class="alphabg container-fluid" style="margin:10px;">
+                        
+                        <h4 style="text-align:center"> Commentaires </h4>
+                        <div> 
+                            {% for com in en_vote.activite.commentaire %}
+                            <div class="avatar100" style="background-image:url({{asset(com.user.image.AssetPath)}}) ;float:left ;height:15vh; width:15vh;"></div>
+                            <div class="alphabg container-fluid"  style="; max-width:80vw">
+                                <a style="float:right" href="{{path('act_comment_delete', { 'commentaire': com.id})}}"><span class="glyphicon glyphicon-remove"></span></a>
+                                <h4>{{com.user.nom}}<br></h4>
+                                {{com.comentaire}}
+                            </div>
+                            <center style="color:gray">{{com.date|date('m/d/Y')}}</center>
+                            {% endfor %}
+                        </div> 
+            <form id="form2" action="{{path('act_commenter',  { 'activite': en_vote.activite.id })}}" method="post"  enctype="multipart/form-data">
+        {{ form_row(commentaire_form.comentaire, { 'attr': { 
+        'style' : 'width:100%',
+        'rows' : '15',
+        'cols' : '50' }} ) }}
+        {{ form_row(commentaire_form.Commenter, {'attr' : {
+        'style' : 'width:40%;'}})  }}
+         {{ form_end(commentaire_form) }}
+                        
+                    </div>
+        
+        </section>
+{% endblock %}

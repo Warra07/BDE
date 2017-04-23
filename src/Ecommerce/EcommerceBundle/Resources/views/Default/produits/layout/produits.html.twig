@@ -1,0 +1,57 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+        <section class="container-fluid">
+        <div class="article-container-header">Boutique</div>
+                <aside class="col-md-3" >
+                <div class="my-article-container">
+                        
+                        <div class=" container-fluid alphabg " style="height:100% ;">
+                    
+                            <a href="{{path('panier')}}"><div class="article-header" style="text-align:center;">
+                                Panier
+                            </div></a>
+                            
+                            <div class="article-main" style="max-width:100%">
+                            Vous avez {{panier|length}} produits dans votre panier.
+                            </div>
+                            <div class="text-center">
+                            <a href="{{path('panier')}}"><button class="btn">Mon panier</button></a>
+                            </div>
+                        </div>
+                </div>
+        </aside>
+        <div class="col-md-9">
+        {% for produit in produits %}
+            <div class="container-fluid my-article-container borderbg" style="padding:0px">
+                <div class="alphabg col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3" style="padding:0px; margin-top:15px; margin-bottom:15px;">
+                    <a style="text-decoration:none" href="{{ path('presentation', { 'id' : produit.id }) }}"><div class="article-header center-inside" style=" font-size:18px; padding:5px; text-align:center">
+                        {{produit.nom}}
+                    </div></a>
+                    <div class="article-main" style="padding:0; margin:0;width:100%">
+                        <div class="center-inside">
+                            <div class="imageproduit" style="background-image:url({{asset(produit.image.AssetPath)}})"></div>
+                        </div>
+                    </div>
+                    <div class="container-fluid article-footer" style="text-align:center;width:100%">
+                        <div style="">
+                            {{produit.prix}}
+                        </div>
+                    </div>
+                   {% if panier[produit.id] is not defined %}
+                    <div class="container-fluid article-footer" style="text-align:center;width:100%">
+                        <a href="{{ path('ajouter', { 'id' : produit.id }) }}">
+                            Ajouter au panier
+                            <span style=" background-color:white; padding:5px; border-radius:20px; float:left" class="glyphicon glyphicon-shopping-cart"></span></a>
+                        </a>
+                    </div>                            
+                    {% endif %}
+                    
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        </section>
+{% endblock %}
+
+

@@ -1,0 +1,23 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+<section class="container-fluid">
+
+<div class="center-inside">
+         <div id="container">   
+        
+            <form id="form2" action="{{path('idee_new')}}" method="post"  enctype="multipart/form-data">  
+            
+                <h3><span>Votre idee !</span></h3>
+            
+                <fieldset><legend>proposez !</legend>
+                    
+                  {{form_widget(form)}}
+                  {{form_end(form)}}    
+                                                
+                </fieldset>                 
+                        
+         </div>
+        </div>
+        </section>
+{% endblock %}

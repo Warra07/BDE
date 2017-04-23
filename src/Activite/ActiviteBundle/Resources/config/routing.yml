@@ -1,0 +1,47 @@
+activite_admin_act_valide:
+    resource: "@ActiviteBundle/Resources/config/routing/valideAdmin.yml"
+    prefix:   /admin/act/valide
+
+activite_admin_act_envote:
+    resource: "@ActiviteBundle/Resources/config/routing/envoteAdmin.yml"
+    prefix:   /admin/act/envote
+
+activite_admin_act_ancienne:
+    resource: "@ActiviteBundle/Resources/config/routing/ancienneAdmin.yml"
+    prefix:   /admin/act/ancienne
+
+activite_admin_idee:
+    resource: "@ActiviteBundle/Resources/config/routing/ideeAdmin.yml"
+    prefix:   /admin/idee
+
+activite_admin_article:
+    resource: "@ActiviteBundle/Resources/config/routing/articleAdmin.yml"
+    prefix:   /admin/article
+
+activite_ancienne:
+    resource: "@ActiviteBundle/Resources/config/routing/ancienne.yml"
+    prefix:   /act/ancienne
+
+activite_valide:
+    resource: "@ActiviteBundle/Resources/config/routing/valide.yml"
+    prefix:   /act/valide
+
+activite_envote:
+    resource: "@ActiviteBundle/Resources/config/routing/en_vote.yml"
+    prefix:   /act/envote
+
+album:
+    resource: "@ActiviteBundle/Resources/config/routing/album.yml"
+    prefix:   /album
+
+
+activite_idee:
+    resource: "@ActiviteBundle/Resources/config/routing/idee.yml"
+    prefix:   /idee
+
+
+
+
+activite:
+    resource: "@ActiviteBundle/Resources/config/routing/activite.yml"
+    prefix:   /act/generals

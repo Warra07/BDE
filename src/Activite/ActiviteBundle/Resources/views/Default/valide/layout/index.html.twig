@@ -1,0 +1,45 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+        <section class="container-fluid">
+        <div class="article-container-header">
+        Evenements validés
+        </div>
+        {% for valide in valides %}
+        <div class=" col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+            <div class="center-inside">
+            
+                <div class="my-article-container">
+                    <div class="alphabg container-fluid" style="margin:10px;">
+                        <a style="text-decoration: none;" href="{{path('act_valide_show', {'id' : valide.id })}}"><div class="article-header" style="width:100%">
+                            {{valide.activite.titre}}
+                        </div></a>
+                        <div class="article-main container-fluid" style="width:100%">
+                            <div class="col-md-4" style="height:100%;">
+                                
+                                <div class="center-inside">
+                                    <div style="background-image:url({{asset(valide.activite.image.AssetPath)}})" class="imagearticle"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-8" style="height:100%;">
+                                {{valide.activite.texte}}
+                            </div>
+                        </div>
+                        <span class="center-inside"> {{valide.inscription|length}} personne(s) ont déjà voté pour cet événement </span>
+                            <div class="container-fluid" style="text-align:center; width:40%">
+                            </div>
+                            <a href="{{path('act_valide_inscrit', {'valide' : valide.id })}}"><div class="article-footer container-fluid" style="text-align:center; width:40%">
+                                    <span style="float:left" class="glyphicon glyphicon-thumbs-up"></span>
+                                    S'inscrire
+                                    <span style="float:right" class="glyphicon glyphicon-thumbs-up"></span>
+                            </div></a>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+            {% endfor %}
+        </section>
+
+    
+{% endblock %}
